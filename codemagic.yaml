@@ -45,13 +45,6 @@ workflows:
       - /tmp/xcodebuild_logs/*.log
       - flutter_drive.log
     publishing:
-      email:
-        recipients:
-          - yucel.ilke@gmail.com
-          - firatoz@gmail.com
-        notify:
-          success: true
-          failure: false
       firebase:
         firebase_token: $FIREBASE_TOKEN
         ios:
