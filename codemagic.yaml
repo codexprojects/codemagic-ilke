@@ -1,7 +1,41 @@
 workflows:
   ios-workflow:
     name: iOS Workflow
+    environment:
+      vars:
+        XCODE_WORKSPACE: "Runner.xcworkspace"
+        XCODE_SCHEME: "Runner"
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      groups:
+        - firebase_credentials
     scripts:
-      - name: Inital test
+      - name: Set up firebase install
         script: |
-          echo "Initial test"
+          echo "install bundler"
+          gem install bundler
+          sudo gem install fastlane-plugin-firebase_app_distribution --user-install
+      - name: Execute fastlane ios publishing task
+        script: |
+          echo "execute fastlane install"
+          cd ios
+          bundle install
+          bundle exec fastlane firebase
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - flutter_drive.log
+    publishing:
+      email:
+        recipients:
+          - yucel.ilke@gmail.com
+        notify:
+          success: true
+          failure: false
+      firebase:
+        firebase_token: $FIREBASE_TOKEN
+        ios:
+          app_id: "1:294729416596:ios:c9be65c6e48d937216d981"
+          groups: 
+            - "iosTesters"
