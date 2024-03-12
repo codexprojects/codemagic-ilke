@@ -10,13 +10,6 @@ workflows:
       cocoapods: default
       groups:
         - firebase_credentials
-    scripts:
-      - name: Execute fastlane ios publishing task
-        script: |
-          echo "execute fastlane install"
-          cd ios
-          bundle install
-          bundle exec fastlane firebase
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
