@@ -1,0 +1,7 @@
+workflows:
+  ios-workflow:
+    name: iOS Workflow
+    scripts:
+      - name: Inital test
+        script: |
+          echo "Initial test"
