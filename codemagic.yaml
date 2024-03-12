@@ -38,7 +38,7 @@ workflows:
           new_build_number=$(expr $BUILD_NUMBER + 100)
           flutter build ipa --release \
             --build-name=1.0.0 \
-            -build-number=$new_build_number \
+            --build-number=$new_build_number \
             --export-options-plist=/Users/builder/export_options.plist
     artifacts:
       - build/ios/ipa/*.ipa
