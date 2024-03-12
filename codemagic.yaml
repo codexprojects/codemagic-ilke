@@ -11,11 +11,6 @@ workflows:
       groups:
         - firebase_credentials
     scripts:
-      - name: Set up firebase install
-        script: |
-          echo "install bundler"
-          gem install bundler
-          sudo gem install fastlane-plugin-firebase_app_distribution --user-install
       - name: Execute fastlane ios publishing task
         script: |
           echo "execute fastlane install"
