@@ -48,6 +48,7 @@ workflows:
       email:
         recipients:
           - yucel.ilke@gmail.com
+          - firatoz@gmail.com
         notify:
           success: true
           failure: false
