@@ -7,7 +7,7 @@ workflows:
       app_store_connect: codemagic
     environment:
       groups:
-        - firebase_token 1//0c7tBd_nHdxZNCgYIARAAGAwSNwF-L9IrcpDz8GsPVyNVNSJEsPsJvyPA4hTf4NVk1eL2C9jIwvzip7LgJQ54ZKtevaCwUosaEOk
+        - firebase_credentials
       ios_signing:
         distribution_type: development
         bundle_identifier: ilkeyucel.codemagic.task
