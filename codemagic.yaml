@@ -9,7 +9,7 @@ workflows:
       groups:
         - firebase_credentials
       ios_signing:
-        distribution_type: development
+        distribution_type: ad_hoc
         bundle_identifier: ilkeyucel.codemagic.task
       vars:
         APP_ID: 6479329113
