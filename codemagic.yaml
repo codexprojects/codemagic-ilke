@@ -7,6 +7,10 @@ workflows:
       events:
         - push
         - pull_request
+      branch_patterns:
+          - pattern: 'main'
+            include: true
+            source: true
     integrations:
       app_store_connect: App Manager Ilke
     environment:
