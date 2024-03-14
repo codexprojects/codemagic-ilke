@@ -29,6 +29,7 @@ workflows:
           flutter packages pub get
       - name: Install pods
         script: |
+          echo "Installing pods"
           find . -name "Podfile" -execdir pod install \;
       - name: Flutter analyze
         script: |
